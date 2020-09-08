@@ -44,10 +44,12 @@ Normally I like to follow Trunk-Based Development for SVM. Since there are no ot
 I've decided to model the Domain OOP style and write everything else in a functional style.
 I find this combination to produce the most high fidelity code - it works well with the inherent design of the JavaScript/TypeScript language.
 
-## Refinements
+## Further Refinements
 
 - Ambiguous requirements:
   - state mutation asks to make conditional changes with the wording "For Pokémon of Type: Bug & Flying", which is ambiguous. Does it mean Pokemon who posess both these types or pokemon who posess at least one of these types?
   - state mutation asks for increasing defence based on presence of letter **G** in name. It is not clear if this includes the lower-case G.
 - We could check for Pokemon Name uniqueness within the data.
 - We could write tests for the data and add a pre-commit hook.
+- We could use NVM to manage the node version.
+- Given the simplicity of this API, I would deploy it serverless with Netlify or Zeit, which also gives us Continuous Deployment.

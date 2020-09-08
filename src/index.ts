@@ -56,7 +56,7 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
       LowerFireAttack,
       IncreaseBugAndFlyingAttack,
       IncreaseLetterGDefense
-    )([]);
+    )(pokedex);
 
     const port = process.env.PORT || 8000;
     const app = express();
