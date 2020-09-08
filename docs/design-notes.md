@@ -12,3 +12,7 @@
 **Decision #2: Perform the requested data transformations at startup.**
 
 The intent behind the requirement to transform the data becomes unclear given that the data will not be transfered to another method of persistance (see decision 1). In my opinion, executing the transformations as part of a data migration script rather than at application startup is closer to the original intent behind the requirement, but until this can be confirmed by speaking to the project owner, I will implement it at startup to avoid unecessary work.
+
+**Decision #3: Push directly to master branch**
+
+Normally I like to follow Trunk-Based Development for SVM. Since there are no other collaborators, there is no CI/CD implemented and there were no instructions given with regards to repository ettiquete, I will keep it simple. I will however use Tags to keep track of versions in step with package.json and CHANGELOG.
