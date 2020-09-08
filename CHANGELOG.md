@@ -17,3 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - moved requirements from README.md to documentation folder
+
+## 0.0.2 - 2020-09-08
+
+### Added
+
+- csv parsing
+- data transformations
+- domain models
+- server logging
+- unit tests via Jest
