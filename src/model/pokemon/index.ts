@@ -1,6 +1,7 @@
 import { PokemonType, PokemonTypeValue } from "../pokemon-type";
 import { NaturalNumber } from "../natural-number";
 import { NonEmptyString } from "../non-empty-string";
+import { JSONObject } from "../json";
 
 export interface PokemonCSVRow {
   "#": string;
@@ -53,7 +54,24 @@ export class Pokemon {
     else if (props.Legendary === "False") this.legendary = false;
     else throw new Error("Legendary parameter must be ");
   }
-  isType(type: PokemonTypeValue) {
+  isType(type: PokemonTypeValue): boolean {
     return this.typeOne.val === type || this.typeTwo?.val === type;
+  }
+  get serialized(): JSONObject {
+    return {
+      number: this.number.val,
+      name: this.name.val,
+      typeOne: this.typeOne.val,
+      typeTwo: this.typeTwo?.val || null,
+      total: this.total.val,
+      hp: this.hp.val,
+      attack: this.attack.val,
+      defense: this.defense.val,
+      specialAttack: this.specialAttack.val,
+      specialDefense: this.specialDefense.val,
+      speed: this.speed.val,
+      generation: this.generation.val,
+      legendary: this.legendary,
+    };
   }
 }

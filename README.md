@@ -2,6 +2,8 @@
 
 A filterable, searchable and paginatable Pokémon Database API.
 
+The API is documented on Postman: https://documenter.getpostman.com/view/912975/TVCjx6LV
+
 ### Stack
 
 - NodeJS

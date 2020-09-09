@@ -52,4 +52,4 @@ I find this combination to produce the most high fidelity code - it works well w
 - We could check for Pokemon Name uniqueness within the data.
 - We could write tests for the data and add a pre-commit hook.
 - We could use NVM to manage the node version.
-- Given the simplicity of this API, I would deploy it serverless with Netlify or Zeit, which also gives us Continuous Deployment.
+- Given the simplicity of this API, I would deploy it serverless with Netlify or Zeit, which also gives us Continuous Deployment and deploy previews for on every branch.

@@ -27,3 +27,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - domain models
 - server logging
 - unit tests via Jest
+
+## 0.1.0 - 2020-09-08
+
+### Added
+
+- /pokemon api endpoint completed
+- api integration test and documentation via Postman
+- levenshtein search
+- Pokemon class serialization
+- tests added to utils folder
+
+### Changed
+
+- moved some code to utils from model
+
+### Fixed
+
+- fixed inproperly typed `is` typeguard functions

@@ -13,7 +13,7 @@ export class WholeNumber {
       throw new Error(`value is not a ${WholeNumber.name}`);
     this._value = value;
   }
-  static is(input: unknown): input is WholeNumber {
+  static is(input: unknown): boolean {
     return (
       typeof input === "number" &&
       input.valueOf() >= 0 &&

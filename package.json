@@ -1,7 +1,7 @@
 {
   "name": "poke-api-kniekb",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Your assignment is to create a Pokémon API from a CSV file using Node and Express.",
   "author": "Dragos Rotaru <dragos@rotaru.co>",
   "license": "GNU GPL V3",
@@ -64,6 +64,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "fast-csv": "^4.3.2",
+    "fastest-levenshtein": "^1.0.12",
     "morgan": "^1.10.0"
   }
 }

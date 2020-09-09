@@ -13,7 +13,7 @@ export class NonEmptyString {
       throw new Error(`value is not a ${NonEmptyString.name}`);
     this._value = value;
   }
-  static is(input: unknown): input is NonEmptyString {
+  static is(input: unknown): boolean {
     return typeof input === "string" && input.length > 0;
   }
 }

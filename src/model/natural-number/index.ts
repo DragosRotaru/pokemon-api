@@ -15,7 +15,7 @@ export class NaturalNumber extends WholeNumber {
       throw new Error(`value is not a ${NaturalNumber.name}`);
     this._value = value;
   }
-  static is(input: unknown): input is NaturalNumber {
+  static is(input: number): boolean {
     return WholeNumber.is(input) && input.valueOf() >= 1;
   }
   multiply(percentage: number) {

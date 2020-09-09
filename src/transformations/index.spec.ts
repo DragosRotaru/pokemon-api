@@ -1,11 +1,11 @@
 import { Pokemon } from "../model";
 import {
-  ExcludeLegendary,
-  ExcludeGhost,
-  DoubleSteelHP,
-  LowerFireAttack,
-  IncreaseBugAndFlyingAttack,
-  IncreaseLetterGDefense,
+  excludeLegendary,
+  excludeGhost,
+  doubleSteelHP,
+  lowerFireAttack,
+  increaseBugAndFlyingAttack,
+  increaseLetterGDefense,
 } from ".";
 
 describe("transformations", () => {
@@ -42,7 +42,7 @@ describe("transformations", () => {
         Legendary: "True",
       }),
     ];
-    expect(ExcludeLegendary(pokedex).length).toEqual(1);
+    expect(excludeLegendary(pokedex).length).toEqual(1);
   });
   test("ExcludeGhost", () => {
     const pokedex = [
@@ -92,7 +92,7 @@ describe("transformations", () => {
         Legendary: "False",
       }),
     ];
-    expect(ExcludeGhost(pokedex).length).toEqual(1);
+    expect(excludeGhost(pokedex).length).toEqual(1);
   });
   test("DoubleSteelHP", () => {
     const pokedex = [
@@ -112,7 +112,7 @@ describe("transformations", () => {
         Legendary: "False",
       }),
     ];
-    expect(DoubleSteelHP(pokedex)[0].hp.val).toEqual(2);
+    expect(doubleSteelHP(pokedex)[0].hp.val).toEqual(2);
   });
   test("LowerFireAttack", () => {
     const pokedex = [
@@ -132,7 +132,7 @@ describe("transformations", () => {
         Legendary: "False",
       }),
     ];
-    expect(LowerFireAttack(pokedex)[0].attack.val).toEqual(9);
+    expect(lowerFireAttack(pokedex)[0].attack.val).toEqual(9);
   });
   test("IncreaseBugAndFlyingAttack", () => {
     const pokedex = [
@@ -152,10 +152,10 @@ describe("transformations", () => {
         Legendary: "False",
       }),
     ];
-    expect(IncreaseBugAndFlyingAttack(pokedex)[0].speed.val).toEqual(11);
+    expect(increaseBugAndFlyingAttack(pokedex)[0].speed.val).toEqual(11);
   });
   test("IncreaseLetterGDefense", () => {
-    const pokedex = IncreaseLetterGDefense([
+    const pokedex = increaseLetterGDefense([
       new Pokemon({
         "#": "1",
         Name: "ooGaZg",

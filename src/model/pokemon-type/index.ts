@@ -1,3 +1,5 @@
+import { ArrayLiteral } from "../../utils";
+
 export const PokemonTypeArray = [
   "Bug",
   "Dark",
@@ -18,10 +20,6 @@ export const PokemonTypeArray = [
   "Steel",
   "Water",
 ] as const;
-
-export type ArrayLiteral<
-  T extends ReadonlyArray<unknown>
-> = T extends ReadonlyArray<infer ElementType> ? ElementType : never;
 
 export type PokemonTypeValue = ArrayLiteral<typeof PokemonTypeArray>;
 

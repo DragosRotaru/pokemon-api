@@ -2,7 +2,6 @@ import { NaturalNumber } from ".";
 
 describe("natural-number", () => {
   test("type guard", () => {
-    expect(NaturalNumber.is("string")).toBeFalsy();
     expect(NaturalNumber.is(0)).toBeFalsy();
     expect(NaturalNumber.is(-1)).toBeFalsy();
     expect(NaturalNumber.is(1.1)).toBeFalsy();
