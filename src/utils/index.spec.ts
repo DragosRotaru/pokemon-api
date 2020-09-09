@@ -9,18 +9,18 @@ describe("utils", () => {
   });
   test("compose", () => {
     const num: number = 3;
-    expect(compose((a) => a)(num)).toEqual(3);
+    expect(compose((a) => a)(num)).toEqual(num);
     expect(
       compose(
         (a) => a * 5,
         (a) => a + 5
       )(num)
-    ).toEqual(3 * 5 + 5);
+    ).toEqual((num + 5) * 5);
     expect(
       compose(
         (a) => a + 5,
         (a) => a * 5
       )(num)
-    ).toEqual((3 + 5) * 5);
+    ).toEqual(num * 5 + 5);
   });
 });

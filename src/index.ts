@@ -48,14 +48,14 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
       return;
     }
 
-    // Apply data transformations
+    // Apply data transformations (compose fn applies in reverse)
     pokedex = compose(
-      excludeLegendary,
-      excludeGhost,
-      doubleSteelHP,
-      lowerFireAttack,
+      increaseLetterGDefense,
       increaseBugAndFlyingAttack,
-      increaseLetterGDefense
+      lowerFireAttack,
+      doubleSteelHP,
+      excludeGhost,
+      excludeLegendary
     )(pokedex);
 
     const port = process.env.PORT || 8000;
