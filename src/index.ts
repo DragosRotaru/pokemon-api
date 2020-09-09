@@ -113,10 +113,6 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
             getFilter(attack)(pokemon.attack.val)
           );
 
-        console.log(attack);
-        console.log("Filtered By Attack");
-        console.log(result);
-
         // Filter by Defense
         const defense = req.query.defense;
         if (typeof defense === "string")
@@ -128,10 +124,6 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
             getFilter(defense)(pokemon.defense.val)
           );
 
-        console.log(defense);
-        console.log("Filtered By Defense");
-        console.log(result);
-
         // Search
         const search =
           typeof req.query.search === "string" ? req.query.search : undefined;
@@ -142,10 +134,6 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
               levenshtein(search, a.name.val) - levenshtein(search, b.name.val)
           );
         }
-
-        console.log(search);
-        console.log("Sorted by Search");
-        console.log(result);
 
         // Pagination
         const DEFAULT_PAGE = new NaturalNumber(1);
@@ -168,15 +156,9 @@ fs.createReadStream(path.join(__dirname, "../data/pokemon.csv"))
           Math.ceil(result.length / pageSize.val)
         );
 
-        // Pagination out of bounds edge cases are handled implicitly because slice returns empty array
-        console.log(
-          "Pagination: ",
-          (page.val - 1) * pageSize.val,
-          Math.min(page.val * (pageSize.val - 1), result.length - 1)
-        );
-
         const resultCount = result.length;
 
+        // Pagination out of bounds edge cases are handled implicitly because slice returns empty array
         result = result.slice(
           (page.val - 1) * pageSize.val,
           Math.min(page.val * pageSize.val, result.length)
